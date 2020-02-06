@@ -17,6 +17,7 @@ class LoginForm extends \Core\Views\Form {
                     'extra' => [
                         'validators' => [
                             'validate_not_empty',
+                            'validate_has_no_space',
                         ]
                     ],
                 ],
@@ -25,7 +26,9 @@ class LoginForm extends \Core\Views\Form {
                     'type' => 'password',
                     'extra' => [
                         'validators' => [
-                            'validate_not_empty'
+                            'validate_not_empty',
+                            'validate_has_no_space',
+                            'validate_contains_capital_letter'
                         ]
                     ],
                 ],

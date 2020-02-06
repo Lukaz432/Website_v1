@@ -32,7 +32,7 @@ class Model {
             $row_data['id'] = $row_id;
             $participants[] = new Participant($row_data);
         }
-        
+
         return $participants;
     }
 

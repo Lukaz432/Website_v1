@@ -10,7 +10,7 @@ $footer = new \App\Views\Footer();
 
 if (!App::$session->userLoggedIn()) {
     header('Location: /login.php');
-}gg
+}
 ?>
 <html>
     <head>
@@ -21,6 +21,7 @@ if (!App::$session->userLoggedIn()) {
         <link rel="stylesheet" href="media/css/milligram.min.css">
         <link rel="stylesheet" href="media/css/style.css">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
     </head>
     <body>
         <header>
@@ -30,7 +31,7 @@ if (!App::$session->userLoggedIn()) {
         <main>
             <section class="wrapper">
                 <div class="block">
-                    <h1>Dalyvių Tvarkyklė:</h1>                    
+                    <h1>Driver information:</h1>
                     <?php print $createForm->render(); ?>
                 </div>
                 <div class="block">
@@ -38,12 +39,14 @@ if (!App::$session->userLoggedIn()) {
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Nr.</th>
-                                    <th>Vardas</th>
-                                    <th>Pavardė</th>
-                                    <th>Miestas</th>
-                                    <th>Trinimas</th>
-                                    <th>Redagavimas</th>
+    <!--                                    <th>Nr.</th>-->
+                                    <th>Driver Name</th>
+                                    <th>Driving Experience(years)</th>
+                                    <th>Country/State</th>
+                                    <th>Age</th>
+                                    <th>Quarter Mile Record(seconds)</th>
+                                    <th>Edit</th>
+                                    <th>Remove</th>
                                 </tr>
                             </thead>
                             <tbody>

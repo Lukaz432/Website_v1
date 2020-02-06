@@ -8,15 +8,23 @@ class BaseForm extends \Core\Views\Form {
         $this->data = [
             'fields' => [
                 'name' => [
-                    'label' => 'Vardas',
+                    'label' => 'Driver Name',
                     'type' => 'text',
                 ],
                 'surname' => [
-                    'label' => 'Pavardė',
+                    'label' => 'Driver Experience(years)',
                     'type' => 'text',
                 ],
                 'city' => [
-                    'label' => 'Miestas',
+                    'label' => 'Country/State',
+                    'type' => 'text',
+                ],
+                'age' => [
+                    'label' => 'Age',
+                    'type' => 'text',
+                ],
+                'weapon' => [
+                    'label' => 'Quarter Mile Record(seconds)',
                     'type' => 'text',
                 ],
             ],

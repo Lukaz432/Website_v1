@@ -35,7 +35,7 @@ function form_success($filtered_input, &$form) {
     //gauname areju su $drink objektais (siuo atveju viena objekta arejuje pagal paduota id
     $participants = $model->get($conditions);
     if (!$participants) {
-        $response->addError('Participant doesn`t exist!');
+        $response->addError('Participant does not exist!');
     } else {
         $participant = $participants[0];
 
@@ -44,6 +44,8 @@ function form_success($filtered_input, &$form) {
         $participant->setName($filtered_input['name']);
         $participant->setSurname($filtered_input['surname']);
         $participant->setCity($filtered_input['city']);
+        $participant->setAge($filtered_input['age']);
+        $participant->setWeapon($filtered_input['weapon']);
         
         //vertes, kurias idejome auksciau i data holderi updatinam 
         //ir duombazeje FileDB ka daro $drinksModel->update($drink) metodas

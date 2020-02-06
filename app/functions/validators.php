@@ -7,7 +7,7 @@ function validate_login($filtered_input, &$form) {
     );
 
     if (!$login_success) {
-        $form['fields']['password']['error'] = 'Prisijungimo duomenys neteisingi!';
+        $form['fields']['password']['error'] = 'Incorrect login details!';
         $form['fields']['password']['value'] = '';
         return false;
     }
@@ -19,7 +19,7 @@ function validate_mail($field_value, &$field) {
     $modelUser = new \App\Users\Model();
     $users = $modelUser->get(['email' => $field_value]);
     if ($users) {
-        $field['error'] = 'Vartotojas tokiu el.paštu jau registruotas!';
+        $field['error'] = 'User with this email address already exists!';
         return false;
     }
     

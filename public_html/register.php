@@ -47,12 +47,12 @@ switch (get_form_action()) {
             <section class="wrapper">
                 <div class="block">
                     <?php if ($success): ?>
-                        <h1>Registracija sėkminga!</h1>
+                        <h1>Registration successful!</h1>
                         <p>
-                            Galite prisijungti paspaudę <a href="/login.php">čia!</a>
+                            Login by clicking<a href="/login.php"> here!</a>
                         </p>
                     <?php else: ?>
-                        <h1>Registruotis:</h1>
+                        <h1>Register:</h1>
 
                         <!-- Register Form -->
                         <?php print $form->render(); ?>

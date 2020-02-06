@@ -67,6 +67,14 @@ class Model
     {
         App::$db->save();
     }
+
+    public function getId($id)
+    {
+        $user_data = App::$db->getRow($this->table_name, $id);
+        $user = new User($user_data);
+        $user->setId($id);
+        return $user;
+    }
 }
 
 ?>

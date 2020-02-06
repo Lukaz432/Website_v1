@@ -11,13 +11,47 @@ class RegisterForm extends \Core\Views\Form {
                 'method' => 'POST',
             ],
             'fields' => [
+                'name' => [
+                    'label' => 'First Name',
+                    'type' => 'text',
+                    'extra' => [
+                        'validators' => [
+                            'validate_not_empty',
+                            'validate_has_no_space',
+                            'validate_first_letter_is_capital'
+                        ]
+                    ],
+                ],
+                'surname' => [
+                    'label' => 'Last Name',
+                    'type' => 'text',
+                    'extra' => [
+                        'validators' => [
+                            'validate_not_empty',
+                            'validate_has_no_space',
+                            'validate_first_letter_is_capital'
+                        ]
+                    ],
+                ],
                 'email' => [
                     'label' => 'Email',
                     'type' => 'email',
                     'extra' => [
                         'validators' => [
                             'validate_not_empty',
+                            'validate_has_no_space',
                             'validate_mail'
+                        ]
+                    ],
+                ],
+                'phone' => [
+                    'label' => 'Phone Number',
+                    'type' => 'text',
+                    'extra' => [
+                        'validators' => [
+                            'validate_not_empty',
+                            'validate_has_no_space',
+                            'validate_phone_number'
                         ]
                     ],
                 ],
@@ -26,7 +60,9 @@ class RegisterForm extends \Core\Views\Form {
                     'type' => 'password',
                     'extra' => [
                         'validators' => [
-                            'validate_not_empty'
+                            'validate_not_empty',
+                            'validate_has_no_space',
+                            'validate_contains_capital_letter'
                         ]
                     ],
                 ],
@@ -35,14 +71,15 @@ class RegisterForm extends \Core\Views\Form {
                     'type' => 'password',
                     'extra' => [
                         'validators' => [
-                            'validate_not_empty'
+                            'validate_not_empty',
+                            'validate_has_no_space'
                         ]
                     ],
                 ],
             ],
             'buttons' => [
                 'submit' => [
-                    'title' => 'Registruotis',
+                    'title' => 'Register',
                 ],
             ],
             'validators' => [

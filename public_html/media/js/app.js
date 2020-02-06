@@ -250,12 +250,14 @@ const table = {
             Object.keys(data).forEach(data_id => {
                 let td = document.createElement('td');
                 td.innerHTML = data[data_id];
-                row.append(td);
+                if (data_id !== 'id') {
+                    row.append(td);
+                }
             });
 
             let buttons = {
-                delete: 'Ištrinti',
-                edit: 'Redaguoti'
+                edit: '<i class="delete fas fa-marker"></i>',
+                delete: '<i class="delete fab fa-hotjar"></i>'
             };
 
             Object.keys(buttons).forEach(button_id => {
@@ -304,7 +306,7 @@ const table = {
                 return document.querySelectorAll('.delete-btn');
             },
             onClickListener: function (e) {
-                if (e.target.className === 'delete') {
+                if (e.target.className === 'delete fab fa-hotjar') {
                     let formData = new FormData();
 
                     let tr = e.target.closest('tr');
@@ -329,7 +331,7 @@ const table = {
                 return document.querySelectorAll('.edit-btn');
             },
             onClickListener: function (e) {
-                if (e.target.className === 'edit') {
+                if (e.target.className === 'delete fas fa-marker') {
                     let formData = new FormData();
 
                     let tr = e.target.closest('tr');
